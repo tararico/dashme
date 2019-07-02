@@ -12,5 +12,8 @@ table
         td= link_to 'Show', button
         td= link_to 'Edit', edit_button_path(button)
         td= link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
+        td= link_to '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post
+        / buttons/indexにリダイレクトして、items/indexに追加
 br/
 = link_to 'New Button', new_button_path
+= link_to '買い物リスト', 'items'

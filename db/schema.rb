@@ -19,12 +19,17 @@ ActiveRecord::Schema.define(version: 2019_06_22_094522) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "{:foreign_key=>true}_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_buttons_on_{:foreign_key=>true}_id"
   end
 
   create_table "items", force: :cascade do |t|
     t.text "description"
+    t.bigint "button_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["button_id"], name: "index_items_on_button_id"
   end
 
+  add_foreign_key "items", "buttons"
 end
