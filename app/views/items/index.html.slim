@@ -1,16 +1,11 @@
 p#notice= notice
 h1 買い物リスト
-table
-  thead
-    tr
-      th コメント
-      th colspan="3"
-  tbody
-    - @items.each do |item|
-      tr
-        td= item.description
-        td= link_to 'Show', item
-        td= link_to 'Edit', edit_item_path(item)
-        td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure??' }
+ul
+  - @items.each do |item|
+    li = item.button.name
+    = item.description
+    = link_to 'show', item
+    = link_to 'コメント', edit_item_path(item)
+    = link_to 'destroy', item, method: :delete, data: { confirm: 'Are you sure??' }
 br/
 = link_to 'Home', buttons_path

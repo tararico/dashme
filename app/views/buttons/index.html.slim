@@ -1,19 +1,12 @@
 p#notice= notice
 h1 Buttons
-table
-  thead
-    tr
-      th Name
-      th colspan="3"
-  tbody
-    - @buttons.each do |button|
-      tr
-        td= button.name
-        td= link_to 'Show', button
-        td= link_to 'Edit', edit_button_path(button)
-        td= link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
-        td= link_to '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post
-        / buttons/indexにリダイレクトして、items/indexに追加
+ul
+   - @buttons.each do |button|
+      li= button.name
+      = link_to 'Show', button
+      = link_to 'Edit', edit_button_path(button)
+      = link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
+      = link_to '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post
 br/
 = link_to 'New Button', new_button_path
 = link_to '買い物リスト', 'items'
