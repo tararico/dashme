@@ -69,6 +69,6 @@ class ButtonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def button_params
-      params.require(:button).permit(:name)
+      params.require(:button).permit(:name, :avatar)
     end
 end

@@ -2,6 +2,9 @@ p#notice= notice
 p
   strong Name:
   = @button.name
+  strong Image:
+  - if @button.avatar.attached?
+    = image_tag @button.avatar.variant(resize: "100x100").processed
 = link_to 'Edit', edit_button_path(@button)
 | \
 = link_to 'Back', buttons_path
