@@ -2,7 +2,9 @@ p#notice= notice
 h1 Buttons
 ul
    - @buttons.each do |button|
-      li= button.name
+      li.dashbutton = button.name
+      - if button.avatar.attached?
+         li.dashbutton = image_tag button.avatar.variant(resize: "100x100").processed
       = link_to 'Show', button
       = link_to 'Edit', edit_button_path(button)
       = link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
