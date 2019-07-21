@@ -4,7 +4,10 @@ ul
   - @items.each do |item|
     li = item.button.name
     = item.description
-    = link_to 'コメントを書く', edit_item_path(item)
+    - if item.description.nil?
+       = link_to 'コメントを追加', edit_item_path(item)
+    - else
+       = link_to 'コメントを編集', edit_item_path(item)
     = link_to 'destroy', item, method: :delete, data: { confirm: 'Are you sure??' }
 br/
 = link_to 'Home', buttons_path
