@@ -4,8 +4,8 @@ ul
    - @buttons.each do |button|
       li.dashbutton = button.name
       - if button.avatar.attached?
-         li.dashbutton = image_tag button.avatar.variant(resize: "100x100").processed
-      = link_to 'Show', button
+         dashbutton = image_tag button.avatar.variant(resize: "100x100").processed
+      br/
       = link_to 'Edit', edit_button_path(button)
       = link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
       = link_to '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post
