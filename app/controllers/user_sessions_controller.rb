@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :reqire_login, only: [:new, :create], raise: false
+  skip_before_action :require_login, only: [:new, :create], raise: false
 
   def new
       @user = User.new
