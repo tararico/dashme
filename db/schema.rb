@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_101407) do
+ActiveRecord::Schema.define(version: 2019_08_13_084437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 2019_08_01_101407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "order_allowed", default: true, null: false
+    t.bigint "family_id"
+    t.index ["family_id"], name: "index_buttons_on_family_id"
+  end
+
+  create_table "families", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "family_user_relations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "family_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|
@@ -61,5 +76,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_101407) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "buttons", "families"
   add_foreign_key "items", "buttons"
 end
