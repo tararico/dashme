@@ -1,4 +1,5 @@
 class Button < ApplicationRecord
+  belongs_to :family
   has_many :items
   has_one_attached :avatar
 
