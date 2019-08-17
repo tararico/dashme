@@ -4,7 +4,7 @@ class ButtonsController < ApplicationController
   # GET /buttons
   # GET /buttons.json
   def index
-    @buttons = Button.all
+    @buttons = Button.where(family_id: @current_user.family_id)
   end
 
 
@@ -21,6 +21,7 @@ class ButtonsController < ApplicationController
   # POST /buttons.json
   def create
     @button = Button.new(button_params)
+    @button.family_id = @current_user.family_id
 
     respond_to do |format|
       if @button.save
