@@ -1,6 +1,6 @@
 class Button < ApplicationRecord
   belongs_to :family
-  has_many :items
+  has_many :items, dependent: :destroy
   has_one_attached :avatar
 
   # def thumbnail
