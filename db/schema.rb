@@ -51,13 +51,6 @@ ActiveRecord::Schema.define(version: 2019_08_13_084437) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "family_user_relations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "family_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.text "description"
     t.bigint "button_id"

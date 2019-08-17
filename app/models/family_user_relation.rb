@@ -1,2 +1,0 @@
-class FamilyUserRelation < ApplicationRecord
-end
