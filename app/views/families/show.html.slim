@@ -1,2 +1,12 @@
-h1 Families#show
-p Find me in app/views/families/show.html.slim
+.section
+  .container.main.content
+    h1.title ファミリー情報
+    - if @family.present?
+      p あなたは以下のユーザーと共有しています
+      ul
+        - @family.users.each do |user|
+          li= user.id
+    - else
+      p あなたは他のユーザーと共有していません
+    .control
+      = link_to "ユーザーを招待する", invitations_path, method: :post, class: "button is-primary"
