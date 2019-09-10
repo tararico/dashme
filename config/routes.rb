@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'families/show'
   get   '/signout',   to: 'users#new',  as: :signout
   post   '/signout',   to: 'users#create'
   get   '/login',   to: 'user_sessions#new',  as: :login
