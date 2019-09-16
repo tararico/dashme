@@ -3,6 +3,10 @@
     = f.label :name
     = f.text_field :name
   div
+    = f.fields_for :family do |i|
+      = i.label :familyname
+      = i.text_field :name
+  div
     = f.label :email
     = f.text_field :email
   div
