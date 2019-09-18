@@ -5,7 +5,7 @@
       p あなたは以下のユーザーと共有しています
       ul
         - @family.users.each do |user|
-          li= user.id
+          li= user.name
     - else
       p あなたは他のユーザーと共有していません
     .control

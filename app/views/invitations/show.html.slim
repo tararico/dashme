@@ -1,0 +1,21 @@
+div.tabs.is-centered
+  ul
+    li
+      = link_to "ユーザー情報", edit_user_path(@user)
+    li.is-active
+      = link_to "グループ情報", family_path(@user.family)
+
+.section
+  .container.main.content
+    .columns.is-mobile.is-multiline
+      .column.is-narrow
+        h1.title 招待アドレス
+      .column.main-action
+        = link_to "戻る", family_path(@family), class: "button"
+    .field
+      .control
+        = label_tag :invitation_url, "URL", class: "label"
+      .control
+        = text_field_tag :invitation_url, edit_invitation_url(@invitation.id, token: @invitation.invitation_token), class: "input"
+
+
