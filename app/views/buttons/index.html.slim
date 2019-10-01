@@ -11,5 +11,8 @@ ul
       = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post)  if button.order_allowed == true
 br/
 = link_to 'New Button', new_button_path
-= link_to '買い物リスト', 'items'
+= link_to '買い物リスト', items_path
+= link_to 'アカウント情報変更', edit_user_path(@current_user)
+= link_to 'ファミリー情報', family_path(@current_user.family_id)
+= link_to 'Slack通知登録', new_slack_workspace_path(@current_user.family_id)
 = link_to 'Logout', logout_path, method: :delete
