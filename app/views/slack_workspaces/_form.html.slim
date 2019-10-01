@@ -1,0 +1,12 @@
+= form_for(@slack_workspace) do |f|
+  / div
+  /   = f.label :room
+  /   = f.text_field :room
+  / div
+  /   = f.label :channel
+  /   = f.text_field :channel
+  div
+    = f.label :webhook_url
+    = f.text_field :webhook_url
+
+    = f.submit
