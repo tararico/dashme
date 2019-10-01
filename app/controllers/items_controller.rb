@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
       if @item.save
         format.html { redirect_to buttons_path, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
+        notify_to_slack(@item)
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -65,5 +66,10 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:description, :button_id)
+    end
+
+    def notify_to_slack(item)
+      workspace = current_user.family.slack_workspace
+      workspace.notify(item.button.name, items_url)
     end
 end
