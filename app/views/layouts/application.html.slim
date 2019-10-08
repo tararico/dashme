@@ -9,5 +9,23 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   body
+    .hero.is-info.is-bold
+      .hero-body
+        .container
+          h1.title DashMe
+    - if flash.notice.present?
+      .hero.is-light
+        .hero-head
+          .container
+            .notification.is-light
+              = flash.notice
     = yield
+    footer
+      .content.has-text-centered
+        p
+          strong DashMe
+          |  by
+          a href="https://github.com/tararico/dashme"  tararico
+
