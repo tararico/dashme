@@ -1,13 +1,21 @@
-p#notice= notice
-h1 買い物リスト
-ul
-  - @items.each do |item|
-    li = item.button.name
-    = item.description
-    - if item.description.nil?
-       = link_to 'コメントを追加', edit_item_path(item)
-    - else
-       = link_to 'コメントを編集', edit_item_path(item)
-    = link_to 'destroy', item, method: :delete, data: { confirm: 'Are you sure??' }
-br/
-= link_to 'Home', buttons_path
+.section
+  .container.main.content
+    .columns.is-mobile.is-multiline
+      .column
+				h1.title 買い物リスト
+				- @items.each do |item|
+					.table
+						ul
+							li.table-column = item.button.name
+							li.table-column = item.description
+							- if item.description.nil?
+								li.table-column = link_to edit_item_path(item) do
+									i.far.fa-edit
+							- else
+								li.table-column = link_to edit_item_path(item) do
+									i.far.fa-edit
+							li.table-column
+								= link_to item, method: :delete	, data: { confirm: '買い物リストから削除しますか？' } do
+									i.fas.fa-check
+							br
+				= link_to 'Home', buttons_path
