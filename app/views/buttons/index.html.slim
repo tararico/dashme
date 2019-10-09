@@ -1,15 +1,21 @@
-p#notice= notice
-h1 Buttons
-ul
-   - @buttons.each do |button|
-      li.dashbutton = button.name
-      - if button.avatar.attached?
-         dashbutton = image_tag button.avatar.variant(resize: "100x100").processed
-      br/
-      = link_to 'Edit', edit_button_path(button)
-      = link_to 'Destroy', button, method: :delete, data: { confirm: 'Are you sure??' }
-      = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post)  if button.order_allowed == true
-br/
+.section
+  .container.main.content
+    .columns.is-mobile.is-multiline
+      .column
+        - @buttons.each do |button|
+          .table
+            ul
+              li.table-column = button.name
+              - if button.avatar.attached?
+                li.table-column = image_tag button.avatar.variant(resize: "100x100").processed
+              - else
+								li.table-column
+              li.table-column = link_to edit_button_path(button) do
+                i.far.fa-edit
+              li.table-column = link_to button, method: :delete, data: { confirm: 'Are you sure??' } do
+                i.fas.fa-trash-alt
+              li.table-column = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post)  if button.order_allowed == true
+          br
 = link_to 'New Button', new_button_path
 = link_to '買い物リスト', items_path
 = link_to 'アカウント情報変更', edit_user_path(@current_user)
