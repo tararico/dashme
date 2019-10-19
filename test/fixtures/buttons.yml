@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+button1:
+  name: パン
+  order_allowed: false
+  family: family1
 
-two:
-  name: MyString
+button2:
+  name: 卵
+  order_allowed: true
+  family: family1

@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  room: MyString
-  channel: MyString
-
-two:
-  room: MyString
-  channel: MyString
+workspace1:
+  webhook_url: nil
+  family: family1
