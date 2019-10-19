@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  description: MyText
+item1:
+  description: nil
+  button: button1
 
-two:
-  description: MyText
+item2:
+  description: 10個パック
+  button: button2
+
