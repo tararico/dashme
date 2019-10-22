@@ -16,8 +16,12 @@ class InvitationTest < ActiveSupport::TestCase
   end
 
   test "expired?" do
-    #24時間以上立っていたらfalseを返す(24時間の以降のレコードを作る)
-    #以内だったらtrueを返す
+    invitation = Invitation.create
+    invitation.created_at = Time.zone.yesterday
+    invitation.save
+    assert(invitation.expired? == true)
+    invitation.created_at = Time.zone.now
+    invitation.save
+    assert(invitation.expired? == false)
   end
-
 end
