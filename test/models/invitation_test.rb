@@ -9,10 +9,11 @@ class InvitationTest < ActiveSupport::TestCase
   end
 
   test "authenticated?" do
-    # invitation_digest.nilだったら、falseを返すこと
-    #invitation_digestとinvitation_tokenを暗号化たものが一致していたらtrueを返すこと
-    #一致していなかったらfalseを返すこと
-
+    invitation = Invitation.create
+    assert(invitation.authenticated?(invitation.invitation_token) == false)
+    invitation.create_digest
+    assert(invitation.authenticated?(invitation.invitation_token) == true)
+    assert(invitation.authenticated?("token") == false)
   end
 
   test "expired?" do
