@@ -16,6 +16,13 @@ ja:
         avatar: 画像
       item:
         description: コメント
+  items:
+    create:
+      notice: "リストに追加しました!"
+    update:
+      notice: "買い物の内容を変更しました"
+    destroy:
+      notice: "買い物リストが減りました！"
   date:
     abbr_day_names:
     - 日
