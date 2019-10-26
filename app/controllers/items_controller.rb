@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
 
     def notify_to_slack(item)
       workspace = current_user.family.slack_workspace
+      return unless workspace
       workspace.notify(item.button.name, items_url)
     end
 end
