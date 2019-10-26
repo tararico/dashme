@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    button_ids = @current_user.family&.buttons.map(&:id)
+    @items = Item.includes(:button).where(button_id: button_ids)
   end
 
   # GET /items/new
