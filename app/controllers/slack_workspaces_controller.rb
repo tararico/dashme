@@ -34,6 +34,6 @@ end
 private
 
   def slack_workspace_params
-    params.require(:slack_workspace).permit(:room, :channel)
+    params.require(:slack_workspace).permit(:webhook_url)
   end
 end
