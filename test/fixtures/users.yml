@@ -21,5 +21,12 @@ kazue:
   email: kazue@example.com
   crypted_password: test
   salt: 65ny4HTKXkdbyZQr_GL
+taira:
+  name: taira
+  email: taira@example.com
+  family: naito
+  crypted_password: test
+  salt: 65ny4HTKXkdbyZQr_GL
+
 
 
