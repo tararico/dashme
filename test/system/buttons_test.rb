@@ -1,42 +1,47 @@
 require "application_system_test_case"
 
 class ButtonsTest < ApplicationSystemTestCase
+  include Sorcery::TestHelpers::Rails::Integration
+
   setup do
-    @button = buttons(:one)
+    visit login_url
+    fill_in "email", with: "taira@example.com"
+    fill_in "password", with: "hoge"
+    click_on "commit"
+    @button = buttons(:animonda)
   end
 
   test "visiting the index" do
     visit buttons_url
-    assert_selector "h1", text: "Buttons"
+    assert_text "New Button"
   end
 
   test "creating a Button" do
     visit buttons_url
     click_on "New Button"
 
-    fill_in "Name", with: @button.name
-    click_on "Create Button"
+    fill_in "button_name", with: "シーバ"
+    click_on "commit"
 
     assert_text "Button was successfully created"
     click_on "Back"
   end
 
   test "updating a Button" do
-    visit buttons_url
-    click_on "Edit", match: :first
+    visit edit_button_path(@button)
 
-    fill_in "Name", with: @button.name
-    click_on "Update Button"
+    fill_in "button_name", with: "アニモンダ？"
+    click_on "commit"
 
     assert_text "Button was successfully updated"
+    assert_text "アニモンダ？"
     click_on "Back"
   end
 
   test "destroying a Button" do
     visit buttons_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    click_link "button_#{@button.id}"
+    page.driver.browser.switch_to.alert.accept
 
     assert_text "Button was successfully destroyed"
   end

@@ -12,7 +12,7 @@
 								li.table-column
               li.table-column = link_to edit_button_path(button) do
                 i.far.fa-edit
-              li.table-column = link_to button, method: :delete, data: { confirm: 'Are you sure??' } do
+              li.table-column = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
                 i.fas.fa-trash-alt
               li.table-column = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}),  method: :post)  if button.order_allowed == true
           br
