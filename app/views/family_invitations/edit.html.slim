@@ -1,0 +1,20 @@
+.section
+  .container.main.content
+    h1.title ファミリーに参加する
+
+    - if @user.errors.present?
+      ul#error_explanation
+        - @user.errors.full_messages.each do |message|
+            li= message
+
+    = form_tag family_invitation_path, method: :put do
+      .field
+        = label_tag :email
+        = text_field_tag :email
+      .field
+        = label_tag :password
+        = password_field_tag :password
+      = hidden_field_tag :invitation_id, @invitation.id
+      .actions
+        = submit_tag "#{@invitation.family.name}ファミリーに参加する"
+

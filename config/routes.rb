@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, except: :index
   resources :families, only: [:show]
   resources :invitations, only: [:create, :edit, :update, :show]
+  resources :family_invitations, only: [:edit, :update]
   resources :buttons
   resources :slack_workspaces
   root to: 'buttons#index'

@@ -9,3 +9,13 @@ button2:
   name: 卵
   order_allowed: true
   family: family1
+
+regza:
+  name: レグザ
+  order_allowed: true
+  family: fukuyama
+
+super_dry:
+  name: ｱｻﾋｨｽｩﾊﾟｧﾄﾞｩﾙｧｧｧｧｲ
+  order_allowed: true
+  family: fukiishi

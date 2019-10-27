@@ -9,4 +9,17 @@ naito:
   email: naito@example.com
   crypted_password: test
   salt: 65ny4HTKXkdbyZQr_GL
+masaharu:
+  name: masaharu
+  family: fukuyama
+  email: masaharu@example.com
+  crypted_password: test
+  salt: 65ny4HTKXkdbyZQr_GL
+kazue:
+  name: kazue
+  family: fukiishi
+  email: kazue@example.com
+  crypted_password: test
+  salt: 65ny4HTKXkdbyZQr_GL
+
 
