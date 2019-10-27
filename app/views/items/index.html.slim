@@ -12,10 +12,10 @@
 								li.table-column = link_to edit_item_path(item) do
 									i.far.fa-edit
 							- else
-								li.table-column = link_to edit_item_path(item) do
+								li.table-column = link_to edit_item_path(item), id: "item_edit_#{item.id}" do
 									i.far.fa-edit
 							li.table-column
-								= link_to item, method: :delete	, data: { confirm: '買い物リストから削除しますか？' } do
+								= link_to item, method: :delete, id: "item_delete_#{item.id}", data: { confirm: '買い物リストから削除しますか？' } do
 									i.fas.fa-check
 							br
 				= link_to 'Home', buttons_path
