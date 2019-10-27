@@ -13,20 +13,17 @@ masaharu:
   name: masaharu
   family: fukuyama
   email: masaharu@example.com
-  crypted_password: test
-  salt: 65ny4HTKXkdbyZQr_GL
+  crypted_password: $2a$10$tyLqHmvo7chngbQd1MrKo.gCbnzGBJdbvma2Jn..e3Rmh.jM8f78m # hoge
+  salt: TF89g5RtjmGVtsdxzsJM
 kazue:
   name: kazue
   family: fukiishi
   email: kazue@example.com
-  crypted_password: test
-  salt: 65ny4HTKXkdbyZQr_GL
+  crypted_password: $2a$10$tyLqHmvo7chngbQd1MrKo.gCbnzGBJdbvma2Jn..e3Rmh.jM8f78m # hoge
+  salt: TF89g5RtjmGVtsdxzsJM
 taira:
   name: taira
   email: taira@example.com
   family: naito
-  crypted_password: test
-  salt: 65ny4HTKXkdbyZQr_GL
-
-
-
+  crypted_password: $2a$10$tyLqHmvo7chngbQd1MrKo.gCbnzGBJdbvma2Jn..e3Rmh.jM8f78m # hoge
+  salt: TF89g5RtjmGVtsdxzsJM

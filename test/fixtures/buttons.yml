@@ -19,3 +19,8 @@ super_dry:
   name: ｱｻﾋｨｽｩﾊﾟｧﾄﾞｩﾙｧｧｧｧｲ
   order_allowed: true
   family: fukiishi
+
+animonda:
+  name: アニモンダ
+  order_allowed: true
+  family: naito
