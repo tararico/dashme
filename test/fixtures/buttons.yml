@@ -22,5 +22,10 @@ super_dry:
 
 animonda:
   name: アニモンダ
+  order_allowed: false
+  family: naito
+
+sheba:
+  name: シーバ
   order_allowed: true
   family: naito

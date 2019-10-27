@@ -2,42 +2,42 @@ require "application_system_test_case"
 
 class ItemsTest < ApplicationSystemTestCase
   setup do
-    @item = items(:one)
+    visit login_url
+    fill_in "email", with: "taira@example.com"
+    fill_in "password", with: "hoge"
+    click_on "commit"
+    @button_a = buttons(:animonda)
+    @button_s = buttons(:sheba)
+    @item = items(:animonda)
   end
 
   test "visiting the index" do
     visit items_url
-    assert_selector "h1", text: "Items"
+    assert_text "Home"
   end
 
   test "creating a Item" do
-    visit items_url
-    click_on "New Item"
+    visit buttons_url
+    click_on "order_#{@button_s.id}"
 
-    fill_in "Description", with: @item.description
-    click_on "Create Item"
-
-    assert_text "Item was successfully created"
-    click_on "Back"
+    assert_text "リストに追加しました!"
   end
 
   test "updating a Item" do
     visit items_url
-    click_on "Edit", match: :first
+    click_on "item_edit_#{@item.id}"
 
-    fill_in "Description", with: @item.description
-    click_on "Update Item"
+    fill_in "item_description", with: "もうすぐなくなる"
+    click_on "commit"
 
-    assert_text "Item was successfully updated"
-    click_on "Back"
+    assert_text "買い物の内容を変更しました"
   end
 
   test "destroying a Item" do
     visit items_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    click_link "item_delete_#{@item.id}"
+    page.driver.browser.switch_to.alert.accept
 
-    assert_text "Item was successfully destroyed"
+    assert_text "買い物リストが減りました！"
   end
 end
