@@ -27,4 +27,5 @@
       = hidden_field_tag :invitation_id, @invitation.id
       .control
         = f.submit nil, class: "button is-primary"
+    = link_to "ユーザー登録がお済みの方はこちら", edit_family_invitation_path(token: params[:token])
 
