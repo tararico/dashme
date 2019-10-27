@@ -2,46 +2,34 @@ require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
   setup do
-    @user = users(:one)
-  end
-
-  test "visiting the index" do
-    visit users_url
-    assert_selector "h1", text: "Users"
+    @user = users(:taira)
   end
 
   test "creating a User" do
-    visit users_url
-    click_on "New User"
+    visit new_user_url
 
-    fill_in "Crypted password", with: @user.crypted_password
-    fill_in "Email", with: @user.email
-    fill_in "Salt", with: @user.salt
-    click_on "Create User"
+    fill_in "user_name", with: "たいたい"
+    fill_in "user_family_attributes_name", with: "ないとぅ"
+    fill_in "user_email", with: "taitai@example.com"
+    fill_in "user_password", with: "hogehoge"
+    fill_in "user_password_confirmation", with: "hogehoge"
+    click_on "commit"
 
-    assert_text "User was successfully created"
-    click_on "Back"
-  end
+    assert_text "create successful!"
 
-  test "updating a User" do
-    visit users_url
-    click_on "Edit", match: :first
+    fill_in "email", with: "taitai@example.com"
+    fill_in "password", with: "hogehoge"
+    click_on "commit"
 
-    fill_in "Crypted password", with: @user.crypted_password
-    fill_in "Email", with: @user.email
-    fill_in "Salt", with: @user.salt
-    click_on "Update User"
+    assert_text "New Button"
 
-    assert_text "User was successfully updated"
-    click_on "Back"
-  end
+    click_on "アカウント情報変更"
 
-  test "destroying a User" do
-    visit users_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    fill_in "user_name", with: "TaiTai"
+    fill_in "user_password", with: "hogehoge"
+    fill_in "user_password_confirmation", with: "hogehoge"
+    click_on "commit"
 
-    assert_text "User was successfully destroyed"
+    assert_text "情報を更新しました"
   end
 end
