@@ -1,7 +1,5 @@
 {
   "name": "dashme",
   "private": true,
-  "dependencies": {
-    "bulma": "^0.7.5"
-  }
+  "dependencies": {}
 }
