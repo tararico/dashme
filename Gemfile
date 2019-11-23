@@ -68,3 +68,4 @@ gem 'html2slim'
 gem 'sorcery'
 gem 'slack-notifier'
 gem "bulma-rails"
+gem 'aws-sdk-s3', require: false
