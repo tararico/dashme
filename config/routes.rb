@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get   '/login',   to: 'user_sessions#new',  as: :login
   post   '/login',   to: 'user_sessions#create'
   delete '/logout',  to: 'user_sessions#destroy', as: :logout
+  get '/about', to: 'home#about'
   resources :users, except: :index
   resources :families, only: [:show]
   resources :invitations, only: [:create, :edit, :update, :show]
