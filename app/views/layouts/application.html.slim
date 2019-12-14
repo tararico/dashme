@@ -19,13 +19,13 @@ head
           h1.title DashMe
         .header-menu
           #nav-drawer
-      input#nav-input.nav-unshown type="checkbox" /
-      label#nav-open for="nav-input"
-        span
-      label#nav-close.nav-unshown for="nav-input"
-      #nav-content
-        ul.nav-body
-          - if @current_user
+      - if @hamburger_menu
+        input#nav-input.nav-unshown type="checkbox" /
+        label#nav-open for="nav-input"
+          span
+        label#nav-close.nav-unshown for="nav-input"
+        #nav-content
+          ul.nav-body
             li.nav-list= link_to 'New Button', new_button_path
             li.nav-list= link_to '買い物リスト', items_path
             li.nav-list= link_to 'アカウント情報変更', edit_user_path(@current_user)

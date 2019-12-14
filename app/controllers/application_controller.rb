@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
+  before_action :set_hamburger_menu
   protect_from_forgery with: :exception
 
   private
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
 
     def family_members
       current_family.users.where.not(id: current_user.id)
+    end
+
+    def set_hamburger_menu
+      @hamburger_menu = !!@current_user
     end
 end
