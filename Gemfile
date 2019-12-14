@@ -68,3 +68,4 @@ gem 'html2slim'
 gem 'sorcery'
 gem 'slack-notifier'
 gem 'aws-sdk-s3', require: false
+gem 'webpacker', '~> 4.x'
