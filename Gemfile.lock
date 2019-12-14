@@ -68,8 +68,6 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.3)
-    bulma-rails (0.8.0)
-      sassc (~> 2.0)
     byebug (11.0.1)
     capybara (3.29.0)
       addressable
@@ -144,6 +142,8 @@ GEM
     public_suffix (4.0.1)
     puma (3.12.1)
     rack (2.0.7)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -188,8 +188,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (2.2.1)
-      ffi (~> 1.9)
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -232,6 +230,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (4.2.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -245,7 +247,6 @@ DEPENDENCIES
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
-  bulma-rails
   byebug
   capybara (>= 2.15)
   chromedriver-helper
@@ -269,6 +270,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webpacker (~> 4.x)
 
 RUBY VERSION
    ruby 2.5.1p57
