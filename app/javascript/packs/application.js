@@ -17,3 +17,13 @@
 import Rails from 'rails-ujs';
 Rails.start();
 import '../stylesheets/application'
+
+let Luminous = require('luminous-lightbox').Luminous;
+let LuminousGallery = require('luminous-lightbox').LuminousGallery;
+
+window.onload = function () {
+  let luminousTrigger = document.querySelector('.luminous');
+  if( luminousTrigger !== null ) {
+    new Luminous(luminousTrigger);
+  }
+};
