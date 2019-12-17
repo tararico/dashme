@@ -7,7 +7,7 @@
             ul
               li.table-column = button.name
               - if button.avatar.attached?
-                li.table-column = image_tag button.avatar.variant(resize: "100x100").processed
+                li.table-column = link_to(image_tag(button.avatar.variant(resize: "100x100").processed), url_for(button.avatar), {class: "luminous"})
               - else
 								li.table-column
               li.table-column = link_to edit_button_path(button) do
