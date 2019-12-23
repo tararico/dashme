@@ -22,8 +22,9 @@ let Luminous = require('luminous-lightbox').Luminous;
 let LuminousGallery = require('luminous-lightbox').LuminousGallery;
 
 window.onload = function () {
-  let luminousTrigger = document.querySelector('.luminous');
+  let luminousTrigger = document.querySelectorAll('.luminous');
   if( luminousTrigger !== null ) {
-    new Luminous(luminousTrigger);
+    new LuminousGallery(luminousTrigger);
   }
+
 };
