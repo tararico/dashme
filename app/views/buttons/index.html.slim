@@ -5,14 +5,19 @@
         - @buttons.each do |button|
           .table
             ul
-              li.table-column = button.name
+              li.table-column
+                = button.name
               - if button.avatar.attached?
-                li.table-column = link_to(image_tag(button.avatar.variant(resize: "100x100").processed), url_for(button.avatar), {class: "luminous"})
+                li.table-column
+                  = link_to(image_tag(button.avatar.variant(resize: "100x100").processed), url_for(button.avatar), {class: "luminous"})
               - else
 								li.table-column
-              li.table-column = link_to edit_button_path(button) do
-                i.far.fa-edit
-              li.table-column = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
-                i.fas.fa-trash-alt
-              li.table-column = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}), method: :post, id: "order_#{button.id}")  if button.order_allowed == true
+              li.table-column
+                = link_to edit_button_path(button) do
+                  i.far.fa-edit
+              li.table-column
+                = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
+                  i.fas.fa-trash-alt
+              li.table-column
+                = link_to( '注文', items_path(button.items.build, item: {button_id: button.id}), method: :post, id: "order_#{button.id}") if button.order_allowed == true
           br
