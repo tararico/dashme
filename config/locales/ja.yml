@@ -12,10 +12,17 @@ ja:
       item: アイテム
     attributes:
       button:
-        name: 名前
+        name: アイテム名
         avatar: 画像
       item:
         description: コメント
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        email: メールアドレス
+      family:
+        familyname: 家族（グループ）名
   items:
     create:
       notice: "リストに追加しました!"
