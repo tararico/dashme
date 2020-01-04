@@ -23,6 +23,8 @@ ja:
         email: メールアドレス
       family:
         familyname: 家族（グループ）名
+      slack_workspace:
+        webhook_url: Webhook URL
   items:
     create:
       notice: "リストに追加しました!"
