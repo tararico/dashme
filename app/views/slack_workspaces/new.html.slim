@@ -1,12 +1,15 @@
-h1 Slack通知登録
-= render 'form'
-
-p
-  | ワークスペースを作る：
-  = link_to "Slack", "https://slack.com/intl/ja-jp/signin"
-
-p
-  | Webhook URLを取得する：
-  = link_to "Webhook URL", "http://slack.com/services/new/incoming-webhook"
-
-
+div
+.section
+  .container.main.content
+    h1.title Slack通知登録
+    = render 'form'
+div
+article.message
+  .message-header ワークスペース・Webhook URLを取得していない場合
+  .message-body
+    p
+      | Slackホームページにて事前のご登録をお願いします。
+    p
+      = link_to "ワークスペースを作る", "https://slack.com/intl/ja-jp/signin"
+    p
+      = link_to "Webhook URL取得ページする", "http://slack.com/services/new/incoming-webhook"

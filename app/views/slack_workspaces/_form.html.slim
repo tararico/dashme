@@ -1,12 +1,7 @@
 = form_for(@slack_workspace) do |f|
-  / div
-  /   = f.label :room
-  /   = f.text_field :room
-  / div
-  /   = f.label :channel
-  /   = f.text_field :channel
-  div
-    = f.label :webhook_url
-    = f.text_field :webhook_url
-
-    = f.submit
+  .field
+    = f.label :webhook_url, class: "label"
+    .control
+      = f.text_field :webhook_url,class: "input is-hovered"
+  .actions.slack_ws_actions
+    = f.submit class: "button is-info"
