@@ -8,16 +8,16 @@
         - button.errors.full_messages.each do |message|
           li= message
   .field
-    = form.label :name, class: "label"
+    = form.label :name, class: "label button_label"
     .control
-      = form.text_field :name, class: "input is-hovered"
-    = form.label :avatar, class: "label"
-    .file
+      = form.text_field :name, class: "input is-hovered button_input"
+    = form.label :avatar, class: "label button_label"
+    .file.button_file
       label.file-label
         = form.file_field :avatar, class: "file-input"
         span.file-cta
           span.file-icon
             i.fas.fa-upload
           span.file-label Choose a file
-  .actions
+  .actions.button_actions
     = form.submit class: "button is-info"
