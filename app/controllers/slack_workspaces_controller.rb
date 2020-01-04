@@ -1,5 +1,4 @@
 class SlackWorkspacesController < ApplicationController
-  skip_before_action :require_login
 
 def new
   @slack_workspace = SlackWorkspace.new
