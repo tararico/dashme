@@ -1,8 +1,13 @@
+div.tabs.is-centered
+	ul
+		li
+			= link_to "ボタン一覧", buttons_path
+		li.is-active
+			= link_to "買い物リスト", items_path
 .section
   .container.main.content
     .columns.is-mobile.is-multiline
       .column
-				h1.title 買い物リスト
 				- @items.each do |item|
 					.table
 						ul
@@ -17,5 +22,4 @@
 							li.table-column
 								= link_to item, method: :delete, id: "item_delete_#{item.id}", data: { confirm: '買い物リストから削除しますか？' } do
 									i.fas.fa-check
-							br
-				= link_to 'Home', buttons_path
+
