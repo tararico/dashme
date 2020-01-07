@@ -1,9 +1,13 @@
 = form_tag login_path, :method => :post do
   .field
-    = label_tag :email
-    = text_field_tag :email
+    p.control.has-icons-left
+      = text_field_tag "email", nil, class: "input is-hoverd",  placeholder: "Email"
+      span class="icon is-small is-left"
+        i class="fas fa-envelope"
   .field
-    = label_tag :password
-    = password_field_tag :password
-  .actions
-    = submit_tag "Login"
+      p.control.has-icons-left
+        = password_field_tag "password", nil, class: "input is-hoverd",  placeholder: "password"
+        span class="icon is-small is-left"
+          i class="fas fa-lock"
+  .actions.users_actions
+    = submit_tag "Login", class: "button is-info"
