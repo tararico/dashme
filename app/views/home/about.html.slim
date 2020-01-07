@@ -1,1 +1,48 @@
-h2 DashMeとは
+- desc = "ボタンを押すだけで欲しいものが伝わる、ふたりの買い物アプリ"
+
+.row.align-items-center
+  .container.main.content
+    .has-text-centered
+      p.subtitle.about_subtitle = desc
+      .button.is-info.is-outlined =link_to "今すぐ始める", new_user_path
+
+hr
+.container.main.content
+  h2.title 特徴
+  ol type="1"
+    li.title.is-5 作ったボタンを押すだけ
+    p.subtitle.is-6 よく買うものをあらかじめ登録しておくと、欲しい時にボタンを押すだけで、ふたりの買い物リストに追加できます。
+    .has-text-centered
+      img alt="button" height="180" src="/assets/about4.png" width="300"
+
+    li.title.is-5 長いメッセージを打つ必要はなし！
+    p.subtitle.is-6 ボタンを押すとすぐに相手に通知。
+    .has-text-centered
+      img alt="button" height="220" src="/assets/about1.png" width="200"
+      img alt="button" height="220" src="/assets/about2.png" width="200"
+
+    li.title.is-5 画像登録で、買い間違えもなし。
+    p.subtitle.is-6 画像を登録することで、欲しいものを確実に伝えることができます。
+    .has-text-centered
+      img alt="button" height="220" src="/assets/about3.png" width="300"
+
+hr
+.container.main.content
+  h2.title 使い方
+  div.notification
+    ol type="1"
+        li.title.is-5 ボタンをつくる
+        .has-text-centered
+          img alt="createbutton" height="180" src="/assets/about5.png" width="500"
+
+        li.title.is-5  欲しい時にボタンを押す
+        .has-text-centered
+          img alt="createbutton" height="180" src="/assets/about6.png" width="500"
+
+        li.title.is-5 買い物リストに追加＆共有したい相手にSlackで通知されます*
+        div
+          span.about_span class="icon is-small"
+            i class="fas fa-bullhorn"
+          span Slackワークスペースの登録が必要です
+        .has-text-centered
+          img alt="createbutton" height="180" src="/assets/about7.png" width="500"
