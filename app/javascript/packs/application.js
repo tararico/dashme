@@ -17,6 +17,7 @@
 import Rails from 'rails-ujs';
 Rails.start();
 import '../stylesheets/application'
+require.context('../images/', true)
 
 let Luminous = require('luminous-lightbox').Luminous;
 let LuminousGallery = require('luminous-lightbox').LuminousGallery;

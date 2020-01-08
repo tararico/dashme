@@ -13,18 +13,16 @@ hr
     li.title.is-5 作ったボタンを押すだけ
     p.subtitle.is-6 よく買うものをあらかじめ登録しておくと、欲しい時にボタンを押すだけで、ふたりの買い物リストに追加できます。
     .has-text-centered
-      img alt="button" height="180" src="/assets/about4.png" width="300"
-
+      = image_pack_tag "media/images/about3.png", size: "200x220", alt: "button"
     li.title.is-5 長いメッセージを打つ必要はなし！
     p.subtitle.is-6 ボタンを押すとすぐに相手に通知。
     .has-text-centered
-      img alt="button" height="220" src="/assets/about1.png" width="200"
-      img alt="button" height="220" src="/assets/about2.png" width="200"
+      = image_pack_tag "media/images/about1.png", size: "240x200", alt: "email"
 
     li.title.is-5 画像登録で、買い間違えもなし。
     p.subtitle.is-6 画像を登録することで、欲しいものを確実に伝えることができます。
     .has-text-centered
-      img alt="button" height="220" src="/assets/about3.png" width="300"
+      = image_pack_tag "media/images/about2.png", size: "220x200", alt: "shopping"
 
 hr
 .container.main.content
@@ -33,11 +31,12 @@ hr
     ol type="1"
         li.title.is-5 ボタンをつくる
         .has-text-centered
-          img alt="createbutton" height="180" src="/assets/about5.png" width="500"
+          = image_pack_tag "media/images/about4.png", alt: "create_button"
+
 
         li.title.is-5  欲しい時にボタンを押す
         .has-text-centered
-          img alt="createbutton" height="180" src="/assets/about6.png" width="500"
+          = image_pack_tag "media/images/about5.png", alt: "push_button"
 
         li.title.is-5 買い物リストに追加＆共有したい相手にSlackで通知されます*
         div
@@ -45,4 +44,5 @@ hr
             i class="fas fa-bullhorn"
           span Slackワークスペースの登録が必要です
         .has-text-centered
-          img alt="createbutton" height="180" src="/assets/about7.png" width="500"
+          = image_pack_tag "media/images/about6.png", alt: "notification"
+
