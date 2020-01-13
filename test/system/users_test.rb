@@ -21,8 +21,9 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "password", with: "hogehoge"
     click_on "commit"
 
-    assert_text "New Button"
+    assert_text "ボタン一覧"
 
+    find('label[for=nav-input]').click
     click_on "アカウント情報変更"
 
     fill_in "user_name", with: "TaiTai"
