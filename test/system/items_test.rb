@@ -13,7 +13,7 @@ class ItemsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit items_url
-    assert_text "Home"
+    assert_text "ボタン一覧"
   end
 
   test "creating a Item" do

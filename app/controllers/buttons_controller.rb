@@ -25,11 +25,9 @@ class ButtonsController < ApplicationController
 
     respond_to do |format|
       if @button.save
-        format.html { redirect_to @button, notice: 'Button was successfully created.' }
-        format.json { render :show, status: :created, location: @button }
+        format.html { redirect_to buttons_path, notice: 'ボタンを作成しました' }
       else
         format.html { render :new }
-        format.json { render json: @button.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,11 +37,9 @@ class ButtonsController < ApplicationController
   def update
     respond_to do |format|
       if @button.update(button_params)
-        format.html { redirect_to @button, notice: 'Button was successfully updated.' }
-        format.json { render :show, status: :ok, location: @button }
+        format.html { redirect_to buttons_path, notice: 'ボタンを編集しました' }
       else
         format.html { render :edit }
-        format.json { render json: @button.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,8 +49,7 @@ class ButtonsController < ApplicationController
   def destroy
     @button.destroy
     respond_to do |format|
-      format.html { redirect_to buttons_url, notice: 'Button was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to buttons_url, notice: 'ボタンを削除しました' }
     end
   end
 
