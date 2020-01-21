@@ -28,6 +28,7 @@ head
           ul.nav-body
             li.nav-list= link_to 'ボタンをつくる', new_button_path
             li.nav-list= link_to 'ボタン一覧', buttons_path
+            li.nav-list= link_to 'ボタン編集', buttons_path(edit: "true")
             li.nav-list= link_to '買い物リスト', items_path
             li.nav-list= link_to 'アカウント情報変更', edit_user_path(@current_user)
             li.nav-list= link_to 'ファミリー情報', family_path(@current_user.family_id)
