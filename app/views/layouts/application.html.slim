@@ -13,27 +13,27 @@ head
 
   body
     header
-    .hero.is-info.is-bold
+    .hero.is-info.is-bold.is-small
       .hero-body
         .container
-          h1.header_title DashMe
-          .header-menu
-            #nav-drawer
-        - if @hamburger_menu
-          input#nav-input.nav-unshown type="checkbox" /
-          label#nav-open for="nav-input"
-            span
-          label#nav-close.nav-unshown for="nav-input"
-          #nav-content
-            ul.nav-body
-              li.nav-list= link_to 'ボタンをつくる', new_button_path
-              li.nav-list= link_to 'ボタン一覧', buttons_path
-              li.nav-list= link_to 'ボタン編集', buttons_path(edit: "true")
-              li.nav-list= link_to '買い物リスト', items_path
-              li.nav-list= link_to 'アカウント情報変更', edit_user_path(@current_user)
-              li.nav-list= link_to 'ファミリー情報', family_path(@current_user.family_id)
-              li.nav-list= link_to 'Slack通知登録', new_slack_workspace_path(@current_user.family_id)
-              li.nav-list= link_to 'ログアウト', logout_path, method: :delete
+          h1.title DashMe
+        .header-menu
+          #nav-drawer
+      - if @hamburger_menu
+        input#nav-input.nav-unshown type="checkbox" /
+        label#nav-open for="nav-input"
+          span
+        label#nav-close.nav-unshown for="nav-input"
+        #nav-content
+          ul.nav-body
+            li.nav-list= link_to 'ボタンをつくる', new_button_path
+            li.nav-list= link_to 'ボタン一覧', buttons_path
+            li.nav-list= link_to 'ボタン編集', buttons_path(edit: "true")
+            li.nav-list= link_to '買い物リスト', items_path
+            li.nav-list= link_to 'アカウント情報変更', edit_user_path(@current_user)
+            li.nav-list= link_to 'ファミリー情報', family_path(@current_user.family_id)
+            li.nav-list= link_to 'Slack通知登録', new_slack_workspace_path(@current_user.family_id)
+            li.nav-list= link_to 'ログアウト', logout_path, method: :delete
     - if flash.notice.present?
       .hero.is-light
         .hero-head
