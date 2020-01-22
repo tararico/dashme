@@ -20,6 +20,17 @@
   }
 }
 
+.header_title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 5px;
+}
+
+.hero-body  {
+  padding: 0 0 0 1rem;
+}
+
 .main-action {
   display: flex;
   justify-content: flex-end
@@ -52,7 +63,7 @@
 #nav-open {
   display: inline-block;
   width: 30px;
-  height: 22px;
+  height: 28px;
   vertical-align: middle;
 }
 
