@@ -30,7 +30,7 @@ div
                 li.table-column.has-text-weight-bold
                   = link_to( '買って', items_path(button.items.build, item: {button_id: button.id}), method: :post, id: "order_#{button.id}", class: "button is-info is-outlined is-small is-rounded buy_btn") if button.order_allowed == true
           br
-        #nbt
+        #nbtn
           = link_to new_button_path do
             i.fas.fa-plus
            
