@@ -55,6 +55,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to items_url, notice: t('.notice')}
       format.json { head :no_content }
+      inform_to_slack(@item)
     end
   end
 
@@ -73,5 +74,11 @@ class ItemsController < ApplicationController
       workspace = current_user.family.slack_workspace
       return unless workspace
       workspace.notify(item.button.name, items_url)
+    end
+
+    def inform_to_slack(item)
+      workspace = current_user.family.slack_workspace
+      return unless workspace
+      workspace.inform(item.button.name, buttons_url)
     end
 end
