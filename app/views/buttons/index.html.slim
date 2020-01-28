@@ -12,11 +12,11 @@ div
         - @buttons.each do |button|
           .table
             ul
-              li.table-column
+              li.table-column.has-text-weight-bold.has-text-left.is-paddingless
                 = button.name
               - if button.avatar.attached?
-                li.table-column
-                  = link_to(image_tag(button.avatar.variant(resize: "100x100").processed), url_for(button.avatar), {class: "luminous"})
+                li.table-column.is-paddingless
+                  = link_to(image_tag(button.avatar.variant(resize: "80x80").processed), url_for(button.avatar), {class: "luminous"})
               - else
 								li.table-column
               - if params[:edit] == "true"
@@ -27,6 +27,13 @@ div
                   = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
                     i.fas.fa-trash-alt
               - else
-                li.table-column
-                  = link_to( '買って', items_path(button.items.build, item: {button_id: button.id}), method: :post, id: "order_#{button.id}", class: "button is-link is-outlined is-small") if button.order_allowed == true
+                li.table-column.has-text-weight-bold
+                  = link_to( '買って', items_path(button.items.build, item: {button_id: button.id}), method: :post, id: "order_#{button.id}", class: "button is-info is-outlined is-small is-rounded buy_btn") if button.order_allowed == true
           br
+        #nbtn
+          = link_to new_button_path do
+            i.fas.fa-plus
+           
+
+
+
