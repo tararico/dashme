@@ -30,6 +30,7 @@ head
               li.nav-list= link_to 'ボタン一覧', buttons_path
               li.nav-list= link_to 'ボタン編集', buttons_path(edit: "true")
               li.nav-list= link_to '買い物リスト', items_path
+              li.nav-list= link_to '買い物リスト編集', items_path(edit: "true")
               li.nav-list= link_to 'アカウント情報変更', edit_user_path(@current_user)
               li.nav-list= link_to 'ファミリー情報', family_path(@current_user.family_id)
               li.nav-list= link_to 'Slack通知登録', new_slack_workspace_path(@current_user.family_id)
@@ -47,4 +48,3 @@ head
           strong DashMe
           |  by
           a href="https://github.com/tararico/dashme"  tararico
-

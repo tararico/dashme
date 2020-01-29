@@ -1,6 +1,10 @@
-p
-  strong Description:
-  = @item.description
-= link_to 'Edit', edit_item_path(@item)
-| \
-= link_to 'Back', items_path
+article.message
+  .message-header.items_header
+    - if @item.button.avatar.attached?
+      = link_to(image_tag(@item.button.avatar.variant(resize: "300x300").processed), url_for(@item.button.avatar), {class: "luminous"})
+  .message-body
+    .title.is-4.has-text-weight-bold.has-text-left
+      = @item.button.name
+    .subtitle.is-6.has-text-left.items_subtitle
+      = @item.description
+br/
