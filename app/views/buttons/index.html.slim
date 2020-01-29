@@ -22,7 +22,7 @@ div
               - if params[:edit] == "true"
                 li.table-column
                   = link_to edit_button_path(button) do
-                    i.far.fa-edit
+                    i.fas.fa-edit
                 li.table-column
                   = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
                     i.fas.fa-trash-alt
