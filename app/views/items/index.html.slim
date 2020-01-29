@@ -11,15 +11,14 @@ div.tabs.is-centered
 				- @items.each do |item|
 					.table
 						ul
-							li.table-column = item.button.name
-							li.table-column = item.description
-							- if item.description.nil?
-								li.table-column = link_to edit_item_path(item) do
-									i.far.fa-edit
-							- else
-								li.table-column = link_to edit_item_path(item), id: "item_edit_#{item.id}" do
-									i.far.fa-edit
 							li.table-column
-								= link_to item, method: :delete, id: "item_delete_#{item.id}", data: { confirm: '買い物リストから削除しますか？' } do
-									i.fas.fa-check
-
+								.has-text-weight-bold.has-text-left
+									= link_to item_path(item) do
+										= item.button.name
+							- if params[:edit] == "true"
+								li.table-column
+									= link_to edit_item_path(item), id: "item_edit_#{item.id}" do
+										i.fas.fa-edit
+							-else
+							li.table-column.is-paddingless
+								= link_to('買った', item_path(item), method: :delete, id: "item_delete_#{item.id}", class: "button is-danger is-outlined is-small is-rounded buy_btn")

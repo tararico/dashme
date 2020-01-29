@@ -17,6 +17,9 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   # POST /items
   # POST /items.json
   def create
