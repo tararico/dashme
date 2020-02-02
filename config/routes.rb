@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :slack_workspaces
   root to: 'buttons#index'
   resources :items
+  resources :password_resets
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

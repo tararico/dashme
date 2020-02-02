@@ -1,0 +1,14 @@
+.section
+  .container.main.content
+  |
+    パスワード再設定のメールを送ります<br>
+    ユーザー登録に使用したメールアドレスを入力してください
+  .container
+    = form_tag password_resets_path, method: :post do
+      .field
+        p.control.has-icons-left
+          = text_field_tag "email", :email, class: "input",  placeholder: "Email"
+          span class="icon is-small is-left"
+            i class="fas fa-envelope"
+      .actions.users_actions
+        = submit_tag "パスワード再設定のメールを送る", class: "button is-info"

@@ -1,0 +1,18 @@
+.section
+  .container.main.content
+  | パスワードを再設定します
+  .container
+  = form_for @user, url: password_reset_path(@token), html: {method: :put} do |f|
+    .field
+      = f.label :password, class: "label"
+      p.control.has-icons-left
+        = f.password_field :password, class: "input", placeholder: "Password"
+        span class="icon is-small is-left"
+          i class="fas fa-lock"
+    .field
+      = f.label :password_confirmation, class: "label"
+      p.control.has-icons-left
+        = f.password_field :password_confirmation, class: "input", placeholder: "Password(確認)"
+        span class="icon is-small is-left"
+          i class="fas fa-lock"
+    = f.submit "パスワード再設定", class: "button is-info"
