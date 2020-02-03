@@ -27,3 +27,11 @@ taira:
   family: naito
   crypted_password: $2a$10$tyLqHmvo7chngbQd1MrKo.gCbnzGBJdbvma2Jn..e3Rmh.jM8f78m # hoge
   salt: TF89g5RtjmGVtsdxzsJM
+fool:
+  name: user_who_forgot_password
+  email: takahiro@example.com
+  crypted_password: $2a$10$tyLqHmvo7chngbQd1MrKo.gCbnzGBJdbvma2Jn..e3Rmh.jM8f78m # hoge
+  salt: TF89g5RtjmGVtsdxzsJM
+  reset_password_token: hoge
+
+
