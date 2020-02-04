@@ -80,13 +80,14 @@
 
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
-  height: 3px;
+  height: 2px;
   width: 25px;
   border-radius: 3px;
   background: #fff;
   display: block;
   content: '';
   cursor: pointer;
+  box-shadow: 0px 0px 6px 2px #ff1e9b;
 }
 
 #nav-open span:before {
