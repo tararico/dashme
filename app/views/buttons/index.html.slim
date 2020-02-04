@@ -24,7 +24,7 @@ div
                   = link_to edit_button_path(button) do
                     i.fas.fa-edit
                 li.table-column
-                  = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: 'Are you sure??' } do
+                  = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: '削除しますか？' } do
                     i.fas.fa-trash-alt
               - else
                 li.table-column.has-text-weight-bold
@@ -33,7 +33,3 @@ div
         #nbtn
           = link_to new_button_path do
             i.fas.fa-plus
-
-
-
-
