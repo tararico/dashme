@@ -10,10 +10,10 @@ head
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-
+    link href="https://fonts.googleapis.com/css?family=Megrim&display=swap" rel="stylesheet"
   body
     header
-    .hero.is-info.is-bold
+    .hero.is-dark.is-bold
       .hero-body
         .container.header_container
           .header-menu
@@ -34,7 +34,7 @@ head
                     li.nav-list= link_to 'ファミリー情報', family_path(@current_user.family_id)
                     li.nav-list= link_to 'Slack通知登録', new_slack_workspace_path(@current_user.family_id)
                     li.nav-list= link_to 'ログアウト', logout_path, method: :delete
-          h1.header_title DashMe
+          h1.header_title KOUTEYA
     - if flash.notice.present?
       .hero.is-light
         .hero-head
@@ -45,6 +45,6 @@ head
     footer
       .content.has-text-centered
         p
-          strong DashMe
+          strong KOUTEYA
           |  by
           a href="https://github.com/tararico/dashme"  tararico
