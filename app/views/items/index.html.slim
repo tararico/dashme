@@ -8,6 +8,7 @@ div.tabs.is-centered
   .container.main.content
     .columns.is-mobile.is-multiline
       .column
+				= content_tag(:p, "買うものはありません") if @items.empty?
 				- @items.each do |item|
 					.table
 						ul
