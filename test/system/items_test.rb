@@ -23,21 +23,21 @@ class ItemsTest < ApplicationSystemTestCase
     assert_text "リストに追加しました!"
   end
 
-  test "updating a Item" do
-    visit items_url
-    click_on "item_edit_#{@item.id}"
+  # test "updating a Item" do
+  #   visit items_url
+  #   click_on "item_edit_#{@item.id}"
 
-    fill_in "item_description", with: "もうすぐなくなる"
-    click_on "commit"
+  #   fill_in "item_description", with: "もうすぐなくなる"
+  #   click_on "commit"
 
-    assert_text "買い物の内容を変更しました"
-  end
+  #   assert_text "買い物の内容を変更しました"
+  # end
 
   test "destroying a Item" do
     visit items_url
     click_link "item_delete_#{@item.id}"
-    page.driver.browser.switch_to.alert.accept
+    # page.driver.browser.switch_to.alert.accept
 
-    assert_text "買い物リストが減りました！"
+    assert_text "#{@item.button.name}を買いました！"
   end
 end

@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: t('.notice')}
+      format.html { redirect_to items_url, notice: "#{@item.button.name}を買いました！"}
       format.json { head :no_content }
       inform_to_slack(@item)
     end
