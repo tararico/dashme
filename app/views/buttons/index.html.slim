@@ -16,14 +16,14 @@ div
                 = button.name
               - if button.avatar.attached?
                 li.table-column.is-paddingless
-                  = link_to(image_tag(button.avatar.variant(resize: "80x80").processed), url_for(button.avatar), {class: "luminous"})
+                  = link_to(image_tag(button.avatar.variant(resize: "60x60").processed), url_for(button.avatar), {class: "luminous"})
               - else
-								li.table-column
+								li.table-column.is-paddingless
               - if params[:edit] == "true"
-                li.table-column
+                li.table-column.is-paddingless
                   = link_to edit_button_path(button) do
                     i.fas.fa-edit
-                li.table-column
+                li.table-column.is-paddingless
                   = link_to button, method: :delete, id: "button_#{button.id}", data: { confirm: '削除しますか？' } do
                     i.fas.fa-trash-alt
               - else
