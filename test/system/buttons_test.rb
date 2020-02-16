@@ -49,6 +49,8 @@ class ButtonsTest < ApplicationSystemTestCase
 
   test "destroying a Button" do
     visit buttons_url
+    find('label[for=nav-input]').click
+    click_on('ボタン編集')
     click_link "button_#{@button.id}"
     page.driver.browser.switch_to.alert.accept
 
