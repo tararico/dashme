@@ -24,13 +24,13 @@ class ButtonsController < ApplicationController
     @button.family_id = @current_user.family_id
 
     respond_to do |format|
-    if params[:commit] == "登録する"
+    if params[:commit] == "作成する"
       if @button.save
         format.html { redirect_to buttons_path, notice: 'ボタンを作成しました' }
       else
         format.html { render :new }
       end
-    else params[:create_item] == "ボタンを登録 & アイテムリストに追加する"
+    else params[:create_item] == "作成 & 買い物リストに追加する"
     if create_button_with_item
       format.html { redirect_to buttons_path, notice: "#{@button.name}を買い物リストに追加しました"}
     else
