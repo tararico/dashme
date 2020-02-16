@@ -24,11 +24,19 @@ class ButtonsController < ApplicationController
     @button.family_id = @current_user.family_id
 
     respond_to do |format|
+    if params[:commit] == "作成する"
       if @button.save
         format.html { redirect_to buttons_path, notice: 'ボタンを作成しました' }
       else
         format.html { render :new }
       end
+    else params[:create_item] == "作成 & 買い物リストに追加する"
+    if create_button_with_item
+      format.html { redirect_to buttons_path, notice: "#{@button.name}を買い物リストに追加しました"}
+    else
+      format.html { render :new }
+    end
+  end
     end
   end
 
@@ -62,5 +70,20 @@ class ButtonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def button_params
       params.require(:button).permit(:name, :avatar)
+    end
+
+    def create_button_with_item
+      @button.save
+      @item = Item.new(button_id: @button.id)
+      @item = @button.items.new
+      @item.save
+      notify_to_slack(@item)
+      true
+    end
+
+    def notify_to_slack(item)
+      workspace = current_user.family.slack_workspace
+      return unless workspace
+      workspace.notify(item.button.name, items_url)
     end
 end

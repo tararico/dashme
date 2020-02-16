@@ -27,6 +27,16 @@ class ButtonsTest < ApplicationSystemTestCase
     assert_text "ボタンを作成しました"
   end
 
+  test "creating a Button and listed Items" do
+    visit buttons_url
+    find('label[for=nav-input]').click
+    click_on('ボタンをつくる')
+    fill_in "button_name", with: "シーバ"
+    click_on "create_item"
+
+    assert_text "シーバを買い物リストに追加しました"
+  end
+
   test "updating a Button" do
     visit edit_button_path(@button)
 
@@ -39,6 +49,8 @@ class ButtonsTest < ApplicationSystemTestCase
 
   test "destroying a Button" do
     visit buttons_url
+    find('label[for=nav-input]').click
+    click_on('ボタン編集')
     click_link "button_#{@button.id}"
     page.driver.browser.switch_to.alert.accept
 

@@ -5,7 +5,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 { margin-top: 10px;
+h1 {
+  margin-top: 10px;
 
 }
 
@@ -19,7 +20,7 @@ h1 { margin-top: 10px;
 
 .table {
   display: flex;
-  }
+}
 
 .table li {
   display: table-cell;
@@ -27,61 +28,62 @@ h1 { margin-top: 10px;
   width: 20%;
   text-align: center;
   vertical-align: middle;
-  }
+}
 
-  li a {
-    cursor: pointer;
-    display: block;
-    margin: -4em 0;
-    padding: 5em 1em;
-  }
+li a {
+  cursor: pointer;
+  display: block;
+  margin: -4em 0;
+  padding: 5em 1em;
+}
 
-  .table ul {
-    list-style: none;
-    display: table;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0;
-  }
+.table ul {
+  list-style: none;
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
 
-  .table-column {
+.table-column {
   flex-direction: column;
   padding: 5px 15px 5px 2px;
   margin-right: 0;
   border-bottom: 1px solid #ccc;
-  }
+}
 
-  .button_label {
-    padding-left: 20px;
-  }
+.button_label {
+  padding-left: 20px;
+}
 
-  .button_input {
-    width: 300px;
-    margin: 20px;
-  }
+.button_input {
+  width: 300px;
+  margin: 20px;
+}
 
-  .button_file {
-    margin: 20px;
-  }
+.button_file {
+  margin: 20px 20px 60px 20px;
+}
 
-  .button_actions {
-    text-align: center;
-  }
+.button_actions {
+  text-align: center;
+  margin: 18px 46px;
+}
 
-  #nbtn {
-    display: block;
-    width: 56px;
-    height: 56px;
-    margin-left: auto;
-    background: #03a9f4;
-    text-align: center;
-    border-radius: 50%;
-    transition: .3s;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+#nbtn {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-left: auto;
+  background: #03a9f4;
+  text-align: center;
+  border-radius: 50%;
+  transition: .3s;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
 }
 
 #nbtn:hover {
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
 }
 
 #nbtn i {
@@ -90,6 +92,7 @@ h1 { margin-top: 10px;
   font-size: 30px;
 }
 
-.buy_btn:hover{
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+.buy_btn:hover {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  /*浮き上がるように*/
 }
