@@ -4,7 +4,12 @@
   .container.main.content
     .has-text-centered
       p.subtitle.about_subtitle = desc
-      .button.is-info.is-outlined =link_to "今すぐ始める", new_user_path
+      .about_button
+          =link_to "今すぐ始める", new_user_path, class: "button is-info is-outlined is-fullwidth"
+      p.subtitle.is-6 アカウントをお持ちの方はこちら
+      .about_button
+          =link_to "ログインする", login_path, class: "button is-info is-fullwidth"
+
 
 hr
 .container.main.content
