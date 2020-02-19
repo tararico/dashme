@@ -15,7 +15,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "user_password_confirmation", with: "hogehoge"
     click_on "commit"
 
-    assert_text "create successful!"
+    assert_text "アカウントを作成しました"
 
     fill_in "email", with: "taitai@example.com"
     fill_in "password", with: "hogehoge"
