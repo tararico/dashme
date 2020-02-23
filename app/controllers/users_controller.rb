@@ -10,7 +10,7 @@ end
 def create
   @user = User.new(user_params)
   if @user.save
-    redirect_to(root_path, notice: 'create successful!')
+    redirect_to(root_path, notice: 'アカウントを作成しました')
   else
     render :new
   end

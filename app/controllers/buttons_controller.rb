@@ -1,10 +1,16 @@
 class ButtonsController < ApplicationController
   before_action :set_button, only: [:show, :edit, :update, :destroy]
+skip_before_action :require_login, only: :index
 
   # GET /buttons
   # GET /buttons.json
   def index
-    @buttons = Button.where(family_id: @current_user.family_id)
+    if current_user
+      @buttons = Button.where(family_id: @current_user.family_id)
+      set_hamburger_menu
+    else
+      render template: "home/about"
+    end
   end
 
 
