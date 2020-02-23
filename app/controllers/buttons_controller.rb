@@ -1,6 +1,6 @@
 class ButtonsController < ApplicationController
   before_action :set_button, only: [:show, :edit, :update, :destroy]
-skip_before_action :require_login, only: :index
+  skip_before_action :require_login, only: :index
 
   # GET /buttons
   # GET /buttons.json
